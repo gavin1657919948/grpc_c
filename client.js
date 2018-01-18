@@ -8,13 +8,13 @@ const client = new proto.Greeter(
   config.host + ":" + config.port,
   grpc.credentials.createInsecure()
 );
+console.log(`Pushing data to ${config.host}:${config.port}...`);
 setInterval(function() {
   let dataArr = [];
   for (let i = 1; i < 5; i++) {
     let sensorId = "sensor" + i;
     dataArr.push(message(sensorId));
   }
-  console.log(dataArr);
   const req = {
     data: JSON.stringify(dataArr)
   };

@@ -2,14 +2,15 @@
 const message = require("./simulate.js");
 const util = require("util");
 const grpc = require("grpc");
+const config = require("./config.json");
 const proto = grpc.load(`${__dirname}/./sample.proto`);
 const client = new proto.Greeter(
-  "localhost:50051",
+  config.host + ":" + config.port,
   grpc.credentials.createInsecure()
 );
 setInterval(function() {
   let dataArr = [];
-  for (let i = 1; i < 51; i++) {
+  for (let i = 1; i < 5; i++) {
     let sensorId = "sensor" + i;
     dataArr.push(message(sensorId));
   }
@@ -23,4 +24,4 @@ setInterval(function() {
     }
     console.log(res);
   });
-}, 4000);
+}, 10000);

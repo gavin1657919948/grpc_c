@@ -1,4 +1,5 @@
 const util = require("util");
+const config = require("./config.json");
 module.exports = function message(id) {
   let temperature;
   let voltage;
@@ -43,22 +44,22 @@ module.exports = function message(id) {
     ',"unit":"' +
     ' mA" } ]';
   alert += "[";
-  if (temperature > 20.8) {
+  if (temperature > config.maxTemperature) {
     alert += '{"channel":"1"' + ',"causedBy":"over Temperature"},';
   }
-  if (temperature < 20.2) {
+  if (temperature < config.minTemperature) {
     alert += '{"channel":"1"' + ',"causedBy":"Temperature too low"},';
   }
-  if (voltage > 20.8) {
+  if (voltage > config.maxVoltage) {
     alert += '{"channel":"2"' + ',"causedBy":"over Voltage"},';
   }
-  if (voltage < 218.2) {
+  if (voltage < config.minVoltage) {
     alert += '{"channel":"2"' + ',"causedBy":"Voltage too low"},';
   }
-  if (current > 102.8) {
+  if (current > config.maxCurrent) {
     alert += '{"channel":"3"' + ',"causedBy":"over Current"},';
   }
-  if (current < 100.2) {
+  if (current < config.minCurrent) {
     alert += '{"channel":"3"' + ',"causedBy":"Current too weak"},';
   }
   let index = alert.lastIndexOf(",");

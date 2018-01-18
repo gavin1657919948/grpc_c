@@ -1,0 +1,10 @@
+{
+  "host": "localhost",
+  "port": 50051,
+  "maxTemperature": 49.5,
+  "minTemperature": 20.5,
+  "maxVoltage": 220.5,
+  "minVoltage": 219.5,
+  "maxCurrent": 101.5,
+  "minCurrent": 100.5
+}

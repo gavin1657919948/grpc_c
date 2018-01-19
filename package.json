@@ -1,5 +1,5 @@
 {
-  "name": "grpc_demo",
+  "name": "grpc_client",
   "version": "1.0.0",
   "description": "",
   "main": "client.js",

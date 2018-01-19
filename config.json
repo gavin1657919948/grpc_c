@@ -1,6 +1,6 @@
 {
-  "host": "localhost",
-  "port": 50051,
+  "host": "code.ngcli.com",
+  "port": 8001,
   "maxTemperature": 49.5,
   "minTemperature": 20.5,
   "maxVoltage": 220.5,

@@ -24,4 +24,4 @@ setInterval(function() {
     }
     console.log(res);
   });
-}, 10000);
+}, config.intervalTime * 1000);

@@ -4,7 +4,7 @@ module.exports = function message(id) {
   let temperature;
   let voltage;
   let current;
-  let message;
+  let channels;
   let error = "[]";
   let alert = "";
   let arcFault = "";
@@ -30,7 +30,7 @@ module.exports = function message(id) {
     3
   ).toFixed(2);
 
-  message =
+  channels =
     '[{ "channel":"1","temperature":' +
     temperature +
     ',"unit":"' +
@@ -69,7 +69,7 @@ module.exports = function message(id) {
   let data = {
     sensorId: id,
     reportTime: timer,
-    message: JSON.parse(message),
+    channels: JSON.parse(channels),
     error: JSON.parse(error),
     alert: JSON.parse(alert),
     arcFault: arcFault

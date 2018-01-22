@@ -6,5 +6,6 @@
   "maxVoltage": 220.5,
   "minVoltage": 219.5,
   "maxCurrent": 101.5,
-  "minCurrent": 100.5
+  "minCurrent": 100.5,
+  "intervalTime": 10
 }
